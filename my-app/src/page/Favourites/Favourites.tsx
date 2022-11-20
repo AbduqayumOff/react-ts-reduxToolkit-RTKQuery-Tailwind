@@ -25,24 +25,26 @@ const Favourites = () => {
 
   return (
     <div className="flex justify-center pt-10 mx-auto h-screen ">
-      <ul className="list-none">
-        {favourites.map((f, i) => (
-          <li key={f} className="flex justify-between items-center mb-3">
-            <div className="pr-3">
-              <span className="mr-3">{i + 1}</span>
-              <a href={f} target="_blank" className="font-bold">
-                {f}
-              </a>
-            </div>
-            <button
-              className={`mt-2 py-2 px-4 bg-red-500 rounded hover:shadow-md transition-all text-white`}
-              onClick={(event) => removeFromFavourite(event, f)}
-            >
-              Remove
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className="relative w-[560px] ">
+        <ul className="list-none">
+          {favourites.map((f, i) => (
+            <li key={f} className="flex justify-between items-center mb-3">
+              <div className="pr-3">
+                <span className="mr-3">{i + 1}</span>
+                <a href={f} target="_blank" className="font-bold">
+                  {f}
+                </a>
+              </div>
+              <button
+                className={`mt-2 py-2 px-4 bg-red-500 rounded hover:shadow-md transition-all text-white`}
+                onClick={(event) => removeFromFavourite(event, f)}
+              >
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
